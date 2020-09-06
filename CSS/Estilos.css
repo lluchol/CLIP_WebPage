@@ -1,0 +1,253 @@
+/*Los selectores # usan el id del elemento, uso exclusivo sin reuso, más prioridad que (clases) y (tipo)*/
+
+#clock
+{
+    background-color: magenta;
+    font-size: 50px;
+    text-shadow: 0px 0px 1px #fff;
+    color: #fff;
+}
+#clock span
+{
+    color: #888;
+    text-shadow: 0px 0px 1px #333;
+    font-size: 30px;
+    position: relative;
+    top: 5px;
+    left: -10px;
+}
+#date
+{
+    letter-spacing: 5px;
+    font-size: 18px;
+    color: #fff;
+}
+#btnArriba
+{
+    display: none;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 10px;
+    right: 10px;
+    z-index: 99; /* Make sure it does not overlap */
+    outline: none; /* Remove outline */
+    background-color: rgb(0, 123, 255);
+    color: white;
+    cursor: url(/Img/Iconos/Arriba.cur), pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#btnArriba:hover
+{
+    background-color: red;
+}
+
+/*=====================================================================================================*/
+/*Los selectores . (clases) tienen más prioridad que (tipo), pero menos que # (id)*/
+
+.body
+{
+    padding: 25px;
+    font-family: 'Calibri', Segoe UI, sans-serif, Verdana, Tahoma;
+    font-size: 14pt;
+}
+.centrar_Elemento
+{
+    text-align: center;
+}
+.bordeEstandar
+{
+    border: 1px black solid;
+}
+.headerLogo
+{
+    padding-bottom: 25px;
+    text-align: center;
+}
+.imgLogo:hover
+{
+    background-color: mintcream;
+    border:double lightgray;
+    cursor: url(/Img/Iconos/WWW.png), pointer;
+    
+}
+.navbar li
+{
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navbar li:hover .submenu
+{
+	visibility: visible;
+    z-index: 99;
+}
+.submenu
+{
+    position: absolute;
+    visibility: hidden;
+    border: 1px solid gray;
+}
+/*Ítem del Submenú*/
+.dropdown-item
+{
+    color: rgb(0, 123, 255);
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    
+}
+.dropdown-item:hover
+{
+    color: red;
+    font-weight: bold;
+    font-size: 20pt;
+    background-color: lightgray;
+}
+.clockdate-wrapper
+{
+    background-color: darkmagenta;
+    padding: 5px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.headerH1
+{
+    padding-top: 50px;
+    text-align: center;
+    color: orange;
+    text-shadow: -1px -1px 0 rgb(100, 100, 100), 1px -1px 0 rgb(100, 100, 100), -1px 1px 0 rgb(100, 100, 100), 1px 1px 0 rgb(100, 100, 100);
+    -webkit-font-smoothing: antialiased;
+}
+.headerH2
+{
+    color: yellow;
+    text-shadow: -1px -1px 0 rgb(100, 100, 100), 1px -1px 0 rgb(100, 100, 100), -1px 1px 0 rgb(100, 100, 100), 1px 1px 0 rgb(100, 100, 100);
+    -webkit-font-smoothing: antialiased;
+}
+.frmLabel
+{
+    padding-top: 25px;
+}
+.frmBackColor
+{
+    background-color: ivory;
+}
+.frmAdiv
+{
+    padding-bottom: 0px;
+}
+.tabla
+{
+    border: 3px black solid;
+    text-align: center;
+    width: 100%;
+}
+.td_ContTabla
+{
+    border: 2px black solid;
+    text-align: center;
+    padding: 5px;
+    background-color: lightskyblue;
+
+}
+.imgConsulta
+{
+    display: block;
+}
+.imgTabla
+{
+    border: 2px gray solid;
+    text-align: center;
+    padding: 0px;
+}
+.optSexo
+{
+    text-align: center;
+    border: 1px lightgray solid;
+    margin-bottom: 20px;
+}
+.div_btnEnvLim
+{
+    text-align: center;
+    padding-top: 25px;
+}
+.btnEnviar
+{
+    margin-right: 10px;
+}
+.btnLimpiar
+{
+    margin-left: 10px;
+}
+.hrFooter
+{
+    border: 3px solid lightgreen;
+    height: 3px;
+    background-color: darkgreen;
+}
+.imgFacebook
+{
+    border: 1px black solid;
+    width: 5%;
+    padding: 0px;
+    margin-bottom: 15px;
+}
+.imgInstagram
+{
+    border: 1px black solid;
+    width: 5%;
+    padding: 0px;
+    margin-bottom: 15px;
+}
+
+/*=====================================================================================================*/
+/*Los selectores (tipo) tienen menos prioridad que (clase) y # (id)*/
+
+nav ul li a
+{
+    font-size: 16pt;
+}
+nav ul li a:hover
+{
+    color: red;
+    font-weight: bold;
+    font-size: 20pt;
+    background-color: lightgray;
+    border-radius: 50px;
+    border:dashed gray;
+    cursor: url(/Img/Iconos/Menu_Sub.cur), pointer;
+}
+div div img
+{
+    width: 100%;
+    padding: 5px;
+}
+form
+{
+    border: 2px lightgray dotted;
+    padding: 15px 25px 25px 25px;
+}
+hr
+{
+    border: 3px solid #666;
+    height: 0px;
+    text-align: center;
+}
+footer
+{
+    background-color: mintcream;
+}
+footer a
+{
+    cursor: url(/Img/Iconos/WWW.png), pointer;
+}

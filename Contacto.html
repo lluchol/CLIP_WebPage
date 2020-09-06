@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="lluchol">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <link rel="shortcut icon" type="image/ico" href="Img/Iconos/Favicon.ico">
+</head>
+
+<body class="body" onload="startTime()">
+
+    <header class="headerLogo">
+        <a href="http://www.reino.com.ar">
+            <img class="imgLogo" id="Logo" onmouseover="AgrandarLogo();" onmouseout="NormalizarLogo()" src="Img/Logos/Reino.png" alt="Logo de Reino">
+        </a>
+    </header>
+
+    <nav class="navbar navbar-expand-md bg-light justify-content-center">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Principal</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Historia.html">Historia</a>
+            </li>
+
+            <li class="nav-item dropdown dmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Productos</a>
+            
+                <!-- SubMenú -->
+
+                <div class="submenu bg-light">
+                    <a class="dropdown-item" href="Novedades.html">Novedades</a>
+                    <a class="dropdown-item" href="Consultas.html">Consultas</a>
+                </div>
+          
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Contacto.html">Contacto</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Juegos.html">Juegos</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-md">
+
+                <div id="clockdate">
+                    <div class="clockdate-wrapper">
+                        <div id="clock"></div>
+                        <div id="date"></div>
+                    </div>
+                </div>
+
+                <section>
+
+                    <header>
+                        <h1 class="headerH1">
+                            Envíe sus sugerencias/comentarios aquí
+                        </h1>
+                        <br>
+                    </header>
+                    
+                    <div class="row">
+                        <div class="col-md">
+
+                            <form class="was-validated" id="frmContacto" method="post" action="mailto:lluchol@hotmail.com">
+
+                                <div class="form-group">
+                                    <label for="txtNombre">Nombre</label>
+                                    <input class="form-control frmBackColor" type="text" id="txtNombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]+" minlength="2" maxlength="100" placeholder="Escriba su Nombre">
+
+                                    <div class="valid-feedback">Válido.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El nombre solamente debe contener letras, no puede contener números. <u>Mínimo 2 caracteres</u>.</div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtApellido">Apellido</label>
+                                    <input class="form-control frmBackColor" type="text" id="txtApellido" required pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]+" maxlength="100" placeholder="Escriba su Apellido">
+
+                                    <div class="valid-feedback">Válido.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El apellido solamente debe contener letras, no puede contener números. <u>Mínimo 1 caracter</u>.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtEdad">Edad</label>
+                                    <input class="form-control frmBackColor" type="number" id="txtEdad" required pattern="[0-9]+" minlength="1" maxlength="3" min="1" max="150" placeholder="Escriba su Edad">
+
+                                    <div class="valid-feedback">Válida.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. La edad solamente debe contener números <u>entre el 1 y el 150</u>, no puede contener letras.</div>
+                                </div>
+                                
+                                <div>
+                                    <label class="frmLabel">Sexo</label>
+                                        <div class="optSexo frmBackColor">
+                                            <input type="radio" name="optSexo" id="optFem" checked>
+                                            <label for="optFem">Femenino</label> <label>          </label>
+
+                                            <input type="radio" name="optSexo" id="optMas">
+                                            <label for="optMas">Masculino</label>
+
+                                            <div class="valid-feedback">Válido.</div>
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtTelefono">Teléfono</label>
+                                    <input class="form-control frmBackColor" type="tel" id="txtTelefono" required pattern="[0-9{+}{-} ]+" minlength="2" maxlength="100" placeholder="Escriba su Número de Teléfono">
+
+                                    <div class="valid-feedback">Válido.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El teléfono solamente debe contener números, no puede contener letras. Se permiten espacios, guiones y el + para código de país. <u>Mínimo 2 caracteres</u>.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtEmail">Email</label>
+                                    <input class="form-control frmBackColor" type="email" id="txtEmail" required maxlength="100" placeholder="Escriba su Email">
+
+                                    <div class="valid-feedback">Válido.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. Un email no puede contener espacios, debe contener un @ y un dominio (.com, .net, etc.).</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtWeb">Web</label>
+                                    <input class="form-control frmBackColor" type="text" id="txtWeb" placeholder="Escriba su Página Web">
+
+                                    <div class="valid-feedback">Válido (este campo es opcional). Si se coloca, no puede contener espacios, debe contener un punto y un dominio (.com, .net, etc.).</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtApellido">Comentarios</label>
+                                    <textarea class="form-control frmBackColor" name="txtCom" id="txtComentarios" cols="30" rows="4" placeholder="Escriba los Comentarios que desee"></textarea>
+
+                                    <div class="valid-feedback">Válido (este campo es opcional).</div>
+                                </div>
+
+                                <div class="div_btnEnvLim">
+                                    <button type="submit" class="btn btn-primary btnEnviar">Enviar</button>
+                                    <button type="reset" class="btn btn-secondary btnLimpiar">Limpiar</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div> <br>
+
+                </section>
+
+                <button onclick="topFunction()" id="btnArriba" title="Ir Arriba"> ↑ </button> 
+
+                <br><br><br>
+                <hr class="hrFooter">
+
+                <footer>
+                    <p>
+                        También puede contactarnos a través de nuestras redes sociales
+                    </p>
+                    <div class="centrar_Elemento">
+                        <a href="https://www.facebook.com/ReinoOficial" title="Facebook">
+                            <img class="imgFacebook" src="Img/Iconos/Facebook.png" alt="Facebook">
+                        </a>
+                        <label>                         </label>
+                        <a href="https://www.instagram.com/reino__oficial/" title="Instagram">
+                            <img class="imgInstagram" src="Img/Iconos/Instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                    <p>Hecha por <i>lluchol</i> - CLIP 2020</p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="JS/JS.js"></script>
+    
+</body>
+
+</html>

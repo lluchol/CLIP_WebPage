@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="lluchol">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <link rel="shortcut icon" type="image/ico" href="Img/Iconos/Favicon.ico">
+</head>
+
+<body class="body" onload="startTime()">
+
+    <header class="headerLogo">
+        <a href="http://www.reino.com.ar">
+            <img class="imgLogo" id="Logo" onmouseover="AgrandarLogo();" onmouseout="NormalizarLogo()" src="Img/Logos/Reino.png" alt="Logo de Reino">
+        </a>
+    </header>
+
+    <nav class="navbar navbar-expand-md bg-light justify-content-center">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Principal</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Historia.html">Historia</a>
+            </li>
+
+            <li class="nav-item dropdown dmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Productos</a>
+            
+                <!-- SubMenú -->
+
+                <div class="submenu bg-light">
+                    <a class="dropdown-item" href="Novedades.html">Novedades</a>
+                    <a class="dropdown-item" href="Consultas.html">Consultas</a>
+                </div>
+          
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Contacto.html">Contacto</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Juegos.html">Juegos</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-md">
+
+                <div id="clockdate">
+                    <div class="clockdate-wrapper">
+                        <div id="clock"></div>
+                        <div id="date"></div>
+                    </div>
+                </div>
+
+                <section>
+
+                    <header>
+                        <h1 class="headerH1">
+                            Consultar Precios
+                        </h1>
+                        <br>
+                    </header>
+                                        
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="" action="" method="post" id="frmPrecios" name="frmPrecios" >
+                                
+                                <div class="form-group">
+                                    <label class="">Categoría</label>
+                                    <div class="optSexo frmBackColor">
+                                        <input type="radio" name="optCat" id="optNada" checked value="4" onclick="NADA()">
+                                        <label for="optNada">- - -</label><br>
+
+                                        <input type="radio" name="optCat" id="optCrema" value="0" onclick="CREMA()">
+                                        <label for="optCrema">Crema</label><br>
+
+                                        <input type="radio" name="optCat" id="optShampoo" value="1" onclick="SHAMPOO()">
+                                        <label for="optShampoo">Shampoo</label><br>
+
+                                        <input type="radio" name="optCat" id="optFragancia" value="2" onclick="FRAGANCIA()">
+                                        <label for="optFragancia">Fragancia</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="lstProducto">Variedad</label>
+                                    <select class="form-control frmBackColor" name="lstProducto" id="lstProducto" size="1" onchange="select_imagen()">
+                                        <option id="indice0" value="0" selected="selected"> </option>
+					                    <option id="indice1" value="1"> </option>
+					                    <option id="indice2" value="2"> </option>
+					                    <option id="indice3" value="3"> </option>
+					                    <option id="indice4" value="4"> </option>
+                                    </select>
+                                    
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="frmLabel" for="txtCantidad">Cantidad</label>
+                                    <input class="form-control frmBackColor" type="number" id="txtCantidad" name="txtCantidad" required pattern="[0-9]+" min="1" max="150" minlength="1" maxlength="3" onkeypress="controlCant()" onkeyup="return ValNumero(this);botonConsultar(this.frmPrecios)">
+                                </div>
+
+                                <div class="div_btnEnvLim">
+                                    <button id="btnConsultar" name="btnConsultar" type="button" class="btn btn-primary btnEnviar" onclick="consultar()">Consultar
+                                    </button>
+
+                                    <button type="reset" name="btnLimpiar" class="btn btn-secondary btnLimpiar" onclick="BotonLimpiar()">Limpiar
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <img id="imgProducto" name="imgProducto" class="bordeEstandar imgConsulta" src="Img/Productos/Consultas/Default.png" alt="Imagen del Producto" title="Imagen del Producto">
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <button onclick="topFunction()" id="btnArriba" title="Ir Arriba"> ↑ </button> 
+
+                <br><br><br>
+                <hr class="hrFooter">
+
+                <footer>
+                    <p>
+                        Consulte más precios en su <a href="https://reino.com.ar/nuestro-catalogo/" title="Página web oficial de Reino"> CATÁLOGO ONLINE</a>
+                    </p>
+                    <p>Hecha por <i>lluchol</i> - CLIP 2020</p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="JS/JS.js"></script>
+    
+</body>
+
+</html>
