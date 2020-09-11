@@ -81,16 +81,16 @@ function checkTime(i)
 
 var auxCat = 0;
 
-var categoria_0=new Array("","","","","");
+var categoria_0=new Array("- - -","- - -","- - -","- - -","- - -");
 var precio_cat0=new Array(0,0,0,0,0);
 
-var categoria_1=new Array("","Hidratante","Antiarrugas","Exfoliante","Nutritiva");
+var categoria_1=new Array("- - -","Hidratante","Antiarrugas","Exfoliante","Nutritiva");
 var precio_cat1=new Array(0,100,50,150,75);
 
-var categoria_2=new Array("","Anticaída","Anticaspa","Facial", "Revitalizante");
+var categoria_2=new Array("- - -","Anticaída","Anticaspa","Facial", "Revitalizante");
 var precio_cat2=new Array(0,330,250,310,380);
 
-var categoria_3=new Array("","Frutal","Floral","Especiado", "Oriental");
+var categoria_3=new Array("- - -","Frutal","Floral","Especiado", "Oriental");
 var precio_cat3=new Array(0,125,200,189,411);
 		
 function consultar()

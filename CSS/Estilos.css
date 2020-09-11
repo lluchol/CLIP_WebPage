@@ -50,7 +50,7 @@
 .body
 {
     padding: 25px;
-    font-family: 'Calibri', Segoe UI, sans-serif, Verdana, Tahoma;
+    font-family: "Calibri", "Segoe UI", "sans-serif", "Verdana", "Tahoma";
     font-size: 14pt;
 }
 .centrar_Elemento
@@ -126,13 +126,11 @@
     text-align: center;
     color: orange;
     text-shadow: -1px -1px 0 rgb(100, 100, 100), 1px -1px 0 rgb(100, 100, 100), -1px 1px 0 rgb(100, 100, 100), 1px 1px 0 rgb(100, 100, 100);
-    -webkit-font-smoothing: antialiased;
 }
 .headerH2
 {
     color: yellow;
     text-shadow: -1px -1px 0 rgb(100, 100, 100), 1px -1px 0 rgb(100, 100, 100), -1px 1px 0 rgb(100, 100, 100), 1px 1px 0 rgb(100, 100, 100);
-    -webkit-font-smoothing: antialiased;
 }
 .frmLabel
 {

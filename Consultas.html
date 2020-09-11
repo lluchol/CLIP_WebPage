@@ -77,7 +77,7 @@
                                         
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="" action="" method="post" id="frmPrecios" name="frmPrecios" >
+                            <form class="" action="#" method="post" id="frmPrecios" name="frmPrecios" >
                                 
                                 <div class="form-group">
                                     <label class="">Categoría</label>
@@ -99,18 +99,18 @@
                                 <div class="form-group">
                                     <label class="frmLabel" for="lstProducto">Variedad</label>
                                     <select class="form-control frmBackColor" name="lstProducto" id="lstProducto" size="1" onchange="select_imagen()">
-                                        <option id="indice0" value="0" selected="selected"> </option>
-					                    <option id="indice1" value="1"> </option>
-					                    <option id="indice2" value="2"> </option>
-					                    <option id="indice3" value="3"> </option>
-					                    <option id="indice4" value="4"> </option>
+                                        <option id="indice0" value="0" selected="selected">- - -</option>
+					                    <option id="indice1" value="1">- - -</option>
+					                    <option id="indice2" value="2">- - -</option>
+					                    <option id="indice3" value="3">- - -</option>
+					                    <option id="indice4" value="4">- - -</option>
                                     </select>
                                     
                                 </div>
 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtCantidad">Cantidad</label>
-                                    <input class="form-control frmBackColor" type="number" id="txtCantidad" name="txtCantidad" required pattern="[0-9]+" min="1" minlength="1" onkeypress="return soloNumeros(event)">
+                                    <input class="form-control frmBackColor" type="number" id="txtCantidad" name="txtCantidad" required min="1" onkeypress="return soloNumeros(event)">
                                 </div>
 
                                 <div class="div_btnEnvLim">
@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <img id="imgProducto" name="imgProducto" class="bordeEstandar imgConsulta" src="Img/Productos/Consultas/Default.png" alt="Imagen del Producto" title="Imagen del Producto">
+                            <img id="imgProducto" class="bordeEstandar imgConsulta" src="Img/Productos/Consultas/Default.png" alt="Imagen del Producto" title="Imagen del Producto">
                         </div>
 
                     </div>
