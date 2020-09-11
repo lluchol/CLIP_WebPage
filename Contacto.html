@@ -82,7 +82,7 @@
 
                                 <div class="form-group">
                                     <label for="txtNombre">Nombre</label>
-                                    <input class="form-control frmBackColor" type="text" id="txtNombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]+" minlength="2" maxlength="100" placeholder="Escriba su Nombre">
+                                    <input class="form-control frmBackColor" type="text" id="txtNombre" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñ ]+" minlength="2" maxlength="100" placeholder="Escriba su Nombre" onkeypress="return soloLetras_esp(event)" onpaste="return false" ondrop="return false">
 
                                     <div class="valid-feedback">Válido.</div>
                                     <div class="invalid-feedback"><b>OBLIGATORIO</b>. El nombre solamente debe contener letras, no puede contener números. <u>Mínimo 2 caracteres</u>.</div>
@@ -90,15 +90,15 @@
                                 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtApellido">Apellido</label>
-                                    <input class="form-control frmBackColor" type="text" id="txtApellido" required pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]+" maxlength="100" placeholder="Escriba su Apellido">
+                                    <input class="form-control frmBackColor" type="text" id="txtApellido" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñ]+" minlength="2" maxlength="100" placeholder="Escriba su Apellido" onkeypress="return soloLetras_esp(event)" onpaste="return false" ondrop="return false">
 
                                     <div class="valid-feedback">Válido.</div>
-                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El apellido solamente debe contener letras, no puede contener números. <u>Mínimo 1 caracter</u>.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El apellido solamente debe contener letras, no puede contener números. <u>Mínimo 2 caracteres</u>.</div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtEdad">Edad</label>
-                                    <input class="form-control frmBackColor" type="number" id="txtEdad" required pattern="[0-9]+" minlength="1" maxlength="3" min="1" max="150" placeholder="Escriba su Edad">
+                                    <input class="form-control frmBackColor" type="number" id="txtEdad" required pattern="[0-9]+" minlength="1" maxlength="3" min="1" max="150" placeholder="Escriba su Edad" onkeypress="return soloNumeros(event)" onpaste="return false" ondrop="return false">
 
                                     <div class="valid-feedback">Válida.</div>
                                     <div class="invalid-feedback"><b>OBLIGATORIO</b>. La edad solamente debe contener números <u>entre el 1 y el 150</u>, no puede contener letras.</div>
@@ -119,10 +119,10 @@
 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtTelefono">Teléfono</label>
-                                    <input class="form-control frmBackColor" type="tel" id="txtTelefono" required pattern="[0-9{+}{-} ]+" minlength="2" maxlength="100" placeholder="Escriba su Número de Teléfono">
+                                    <input class="form-control frmBackColor" type="tel" id="txtTelefono" required pattern="[0-9{+}]+" minlength="2" maxlength="100" placeholder="Escriba su Número de Teléfono" onkeypress="return soloNumeros_tel(event)" onpaste="return false" ondrop="return false">
 
                                     <div class="valid-feedback">Válido.</div>
-                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El teléfono solamente debe contener números, no puede contener letras. Se permiten espacios, guiones y el + para código de país. <u>Mínimo 2 caracteres</u>.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El teléfono solamente debe contener números, no puede contener letras. Se permite el + para código de país. <u>Mínimo 2 caracteres</u>.</div>
                                 </div>
 
                                 <div class="form-group">
@@ -142,13 +142,14 @@
 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtApellido">Comentarios</label>
-                                    <textarea class="form-control frmBackColor" name="txtCom" id="txtComentarios" cols="30" rows="4" placeholder="Escriba los Comentarios que desee"></textarea>
+                                    <textarea class="form-control frmBackColor" name="txtCom" id="txtComentarios" cols="30" rows="4" required minlength="2"></textarea>
 
-                                    <div class="valid-feedback">Válido (este campo es opcional).</div>
+                                    <div class="valid-feedback">Válido.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. Mínimo 2 caracteres.</div>
                                 </div>
 
                                 <div class="div_btnEnvLim">
-                                    <button type="submit" class="btn btn-primary btnEnviar">Enviar</button>
+                                    <button type="submit" class="btn btn-primary btnEnviar" onclick="val_frmContacto()">Enviar</button>
                                     <button type="reset" class="btn btn-secondary btnLimpiar">Limpiar</button>
                                 </div>
                             </form>
@@ -165,7 +166,7 @@
 
                 <footer>
                     <p>
-                        También puede contactarnos a través de nuestras redes sociales
+                        Además de nuestra <a href="https://reino.com.ar/" title="Página web oficial de Reino"> Página WEB OFICIAL</a>, puede contactarnos a través de nuestras <b>redes sociales</b>.
                     </p>
                     <div class="centrar_Elemento">
                         <a href="https://www.facebook.com/ReinoOficial" title="Facebook">
@@ -186,7 +187,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="JS/JS.js"></script>
+    <script src="JS/JS.js"></script>
     
 </body>
 

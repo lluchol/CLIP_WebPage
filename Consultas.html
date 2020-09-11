@@ -110,7 +110,7 @@
 
                                 <div class="form-group">
                                     <label class="frmLabel" for="txtCantidad">Cantidad</label>
-                                    <input class="form-control frmBackColor" type="number" id="txtCantidad" name="txtCantidad" required pattern="[0-9]+" min="1" max="150" minlength="1" maxlength="3" onkeypress="controlCant()" onkeyup="return ValNumero(this);botonConsultar(this.frmPrecios)">
+                                    <input class="form-control frmBackColor" type="number" id="txtCantidad" name="txtCantidad" required pattern="[0-9]+" min="1" minlength="1" onkeypress="return soloNumeros(event)">
                                 </div>
 
                                 <div class="div_btnEnvLim">
@@ -139,7 +139,7 @@
 
                 <footer>
                     <p>
-                        Consulte más precios en su <a href="https://reino.com.ar/nuestro-catalogo/" title="Página web oficial de Reino"> CATÁLOGO ONLINE</a>
+                        Consulte más precios en su <a href="https://reino.com.ar/nuestro-catalogo/" title="Catálogo Online">CATÁLOGO ONLINE</a>
                     </p>
                     <p>Hecha por <i>lluchol</i> - CLIP 2020</p>
                 </footer>
@@ -151,7 +151,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="JS/JS.js"></script>
+    <script src="JS/JS.js"></script>
     
 </body>
 

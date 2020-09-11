@@ -99,16 +99,15 @@ function consultar()
  	var precio=parseInt(document.frmPrecios.lstProducto.options[pos].value);
 	var cant=document.frmPrecios.txtCantidad.value;
 
-	if (cant=="" || cant==" " || document.frmPrecios.lstProducto.selectedIndex==0 || document.getElementById('optNada').checked)
-	// cant==" " me refiero al caracter alt + 255 (que como permite escribirlo, genera NaN al calcular).
+	if (cant=="" || document.frmPrecios.lstProducto.selectedIndex==0 || document.getElementById('optNada').checked)
 	{
-		alert("Ningún campo puede estar vacío, debe elegir un tipo y una variedad");
+		alert("Ningún campo puede estar vacío, debe elegir una categoría, variedad y cantidad");
 	}
 	else
 	{
 		Total=precio*cant;
 
-		alert("El total es: "+"$"+Total);
+		alert("El total es: " + "$" + Total);
 	}
 }
 
@@ -184,36 +183,6 @@ function FRAGANCIA()
 	CargarLista(3);
 }
 
-function controlCant()
-{
-	x=window.event.keyCode;
-
-//Según el ASCII, se controla que el caracter a ingresar no sea menor a 48 ni mayor a 57 (el 48 es el "cero" y el 57 es el "nueve")
-
-    if (x<48 || x>57)
-	{
-     	window.event.keyCode=0;
-	}		
-}
-		
-function Solo_Numeros(variable)
-{
-  	Numer=parseInt(variable);
-  	if (isNaN(Numer))
-  	{
-        return "";  
-    }      
-	else
-	{ 
-  		return Numer;  
-	}
-}
-
-function ValNumero(Control)
-{
-    Control.value=Solo_Numeros(Control.value);
-}
-
 function select_imagen()
 {
 	if(document.getElementById('optCrema').checked)
@@ -258,23 +227,34 @@ function select_imagen()
   		}
   	}
 }
-		
-function botonConsultar(frmPrecios)
-{ //&& es "and" (en VB), unión lógica, != es "distinto de"
-	if (document.frmPrecios.txtCantidad.value != "")
-    {
-    	document.getElementById('cmdConsultar').disabled = false;
-    }
-    else
-    {
-		document.frmPrecios.Consultar.disabled = true;
-	}
-}
 
 function BotonLimpiar()
 {
 	document.getElementById("imgProducto").src="Img/Productos/Consultas/Default.png";
 	CargarLista(4);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Página Contacto
+
+function val_frmContacto()
+{
+	var txtNombre=document.getElementById("txtNombre").value;
+	var txtApellido=document.getElementById("txtApellido").value;
+	var txtTelefono=document.getElementById("txtTelefono").value;
+
+	if(txtNombre=="  ")
+	{
+		alert("Error, revise el campo Nombre. No es posible insertar 2 espacios seguidos");
+	}
+	if(txtApellido=="  ")
+	{
+		alert("Error, revise el campo Apellido. No es posible insertar 2 espacios seguidos");
+	}
+	if(txtTelefono=="  ")
+	{
+		alert("Error, revise el campo Teléfono. No es posible insertar 2 espacios seguidos");
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -287,16 +267,16 @@ function jugar_Adiv()
 	var cant_intentos = 4;
 	var numero_aleatorio = Math.round(Math.random() * (max - min) + min);
 	var numero;
-	var nombre_Adiv=document.getElementById("txtNombre_Adiv").value;
+	var txtNombre_Adiv=document.getElementById("txtNombre_Adiv").value;
 	var audio = new Audio('Audio/WinGame.mp3');
 
-	if(nombre_Adiv=="" || nombre_Adiv==" " || nombre_Adiv==" " || nombre_Adiv=="  " || nombre_Adiv=="  " ||(nombre_Adiv <= 0 || nombre_Adiv >0))
+	if(txtNombre_Adiv.length < 2 || txtNombre_Adiv <= 0 || txtNombre_Adiv >0)
 	{
 		alert("¡Debes Ingresar un Nombre para poder JUGAR!");
 	}
 	else
 	{   //La \t representa 32 espacios en blanco y a veces se centra con una sola (solo funciona en firefox), cada "espacio", representa 4 espacios en blanco
-		alert("   ¡Bienvenido!, antes de comenzar, lee esto:\n\n   Al realizar tus intentos nº 2 y 3, se te dará una pista (debes ingresar un número ya que si apretas cancelar, no escribes nada, escribes una letra u otro caracter, la pista no será otorgada).\n\n\t\t\t\t\t\t\t   ¡A jugar!");
+		alert("   ¡Bienvenido!, antes de comenzar, lee esto:\n\n   Al realizar tus intentos nº 2 y 3, se te dará una pista (debes ingresar un número ya que si presionas cancelar, no escribes nada, escribes una letra u otro caracter, la pista no será otorgada).\n\n\t\t\t\t\t\t\t   ¡A jugar!");
 		numero= parseInt( prompt("Ingresa un número" + "\n\n Tienes " + cant_intentos + " intentos"));
 		cant_intentos--;
 
@@ -317,6 +297,7 @@ function jugar_Adiv()
 			numero= parseInt( prompt("Ingresa un número" + "\n\nQuedan " + cant_intentos + " intentos"));
 			cant_intentos--;
 		}
+
 			if (numero==numero_aleatorio)
 			{
 				audio.play();
@@ -330,7 +311,6 @@ function jugar_Adiv()
 				{
 					prompt.close();
 				}
-				
 				if (numero<numero_aleatorio)
 				{
 					alert("*** PISTA: es mayor ***" + "\n\n  Intentos restantes: " + cant_intentos);
@@ -339,16 +319,13 @@ function jugar_Adiv()
 				{
 					alert("*** PISTA: es menor ***" + "\n\n  Intentos restantes: " + cant_intentos);
 				}
-				
 				numero= parseInt( prompt("Ingresa un número" + "\n\nQuedan " + cant_intentos + " intentos"));
 				cant_intentos--;
-
 				if (numero==numero_aleatorio)
 				{
 					audio.play();
 					alert("¡Felicitaciones, GANASTE!" + "\n\n\tEl número era: " + numero_aleatorio);
 				}
-
 				else
 				{
 					var INC = confirm("    INCORRECTO" + "\n\nIntentos restantes: " + cant_intentos);
@@ -357,7 +334,6 @@ function jugar_Adiv()
 					{
 						prompt.close();
 					}
-
 					if (numero<numero_aleatorio)
 					{
 						alert("*** PISTA: es mayor ***" + "\n\n  Intentos restantes: " + cant_intentos);
@@ -366,16 +342,13 @@ function jugar_Adiv()
 					{
 						alert("*** PISTA: es menor ***" + "\n\n  Intentos restantes: " + cant_intentos);
 					}
-
 					numero= parseInt( prompt("Ingresa un número" + "\n\nQuedan " + cant_intentos + " intentos"));
 					cant_intentos--;
-
 					if (numero==numero_aleatorio)
 					{
 						audio.play();
 						alert("¡Felicitaciones, GANASTE!" + "\n\n\tEl número era: " + numero_aleatorio);
 					}
-
 					else
 					{
 						alert("    INCORRECTO" + "\n\nIntentos restantes: " + cant_intentos);
@@ -383,12 +356,105 @@ function jugar_Adiv()
 					}
 				}
 			}
-
+			
 		document.getElementById("respuesta").innerHTML="El número era: <strong>" + numero_aleatorio + "</strong>"
-		
+	}
+}
 
+function soloLetras(e)
+{
+	key=e.keyCode || e.which;
+	teclado=String.fromCharCode(key);
+	letras="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
+
+	//Admite: retroceso, ←, →, suprimir, ñ
+	especiales="8-37-38-46-164";
+	teclado_especial=false;
+
+	for(var i in especiales)
+	{
+		if(key==especiales[i])
+		{
+			teclado_especial=true; break;
+		}
 	}
 
+	if (letras.indexOf(teclado) == -1 && !teclado_especial)
+	{
+		return false;
+	}
+}
+
+function soloLetras_esp(e)
+{
+	key=e.keyCode || e.which;
+	teclado=String.fromCharCode(key);
+	letras=" abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ";
+
+	//Admite: retroceso, ←, →, suprimir, ñ
+	especiales="8-37-38-46-164";
+	teclado_especial=false;
+
+	for(var i in especiales)
+	{
+		if(key==especiales[i])
+		{
+			teclado_especial=true; break;
+		}
+	}
+
+	if (letras.indexOf(teclado) == -1 && !teclado_especial)
+	{
+		return false;
+	}
+}
+
+function soloNumeros(e)
+{
+	key=e.keyCode || e.which;
+	teclado=String.fromCharCode(key);
+	numeros="0123456789";
+
+	//Admite: retroceso, ←, →, suprimir
+	especiales="8-37-38-46";
+	teclado_especial=false;
+
+	for(var i in especiales)
+	{
+		if(key==especiales[i])
+		{
+			teclado_especial=true; break;
+		}
+	}
+
+	if (numeros.indexOf(teclado) == -1 && !teclado_especial)
+	{
+		return false;
+	}
+}
+
+function soloNumeros_tel(e)
+{
+	key=e.keyCode || e.which;
+	teclado=String.fromCharCode(key);
+	numeros="0123456789+";
+
+	//Admite: retroceso, ←, →, suprimir
+	especiales="8-37-38-46";
+	teclado_especial=false;
+
+	for(var i in especiales)
+	{
+		if(key==especiales[i])
+		{
+			teclado_especial=true; break;
+		}
+	}
+
+	if (numeros.indexOf(teclado) == -1 && !teclado_especial)
+	{
+		return false;
+	}
 }
 
 function info_Adiv()

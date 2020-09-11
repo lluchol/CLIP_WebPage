@@ -152,13 +152,26 @@
     text-align: center;
     width: 100%;
 }
-.td_ContTabla
+.td_Col1
 {
     border: 2px black solid;
     text-align: center;
     padding: 5px;
     background-color: lightskyblue;
-
+}
+.td_Col2
+{
+    border: 2px black solid;
+    text-align: justify;
+    padding: 5px;
+    background-color: lightcyan;
+}
+.td_Col2_Alt
+{
+    border: 2px black solid;
+    text-align: left;
+    padding: 5px;
+    background-color: lightcyan;
 }
 .imgConsulta
 {
@@ -197,14 +210,12 @@
 }
 .imgFacebook
 {
-    border: 1px black solid;
     width: 5%;
     padding: 0px;
     margin-bottom: 15px;
 }
 .imgInstagram
 {
-    border: 1px black solid;
     width: 5%;
     padding: 0px;
     margin-bottom: 15px;

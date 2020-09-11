@@ -86,10 +86,10 @@
                                 
                                 <div class="form-group">
                                     <label for="txtNombre">Nombre</label>
-                                    <input class="form-control frmBackColor" type="text" id="txtNombre_Adiv" required pattern="[a-zA-ZáéíóúÁÉÍÓÚ ]+" minlength="2" maxlength="100" placeholder="Escribe un Nombre para Jugar">
+                                    <input class="form-control frmBackColor" type="text" id="txtNombre_Adiv" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñ]+" minlength="2" maxlength="30" onkeypress="return soloLetras(event)" onpaste="return false" ondrop="return false">
 
                                     <div class="valid-feedback">Válido, puedes jugar.</div>
-                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El nombre solamente debe contener letras, no puede contener números. <u>Mínimo 2 caracteres</u>.</div>
+                                    <div class="invalid-feedback"><b>OBLIGATORIO</b>. El nombre solamente debe contener letras, no puede contener ningún otro caracter. <u>Mínimo 2 caracteres</u>.</div>
                                 </div>
 
                                 <div class="centrar_Elemento">
@@ -130,7 +130,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="JS/JS.js"></script>
+    <script src="JS/JS.js"></script>
     
 </body>
 
